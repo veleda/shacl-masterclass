@@ -6,7 +6,7 @@ Using the file **data.ttl** (*../data.ttl*), complete the shapes described in **
 Then use either the RDF4J SHACL engine or [SHACL Playground](https://shacl.org/playground/) to ensure that your validation conforms true.
 
 ### 2 Extend the shapes graph
-Pick the data graph of your choice from the *folder [2](https://github.com/veleda/shacl-masterclass/tree/main/data/exercises/2)*.
+Pick the data graph of your choice from the *[folder 2](https://github.com/veleda/shacl-masterclass/tree/main/data/exercises/2)*.
 Copy-paste the data into data.ttl and work with the data graph as a whole.
 
 1. Extend the shapes graph in *../shapes.ttl* in order for the data to conform to these shapes.
