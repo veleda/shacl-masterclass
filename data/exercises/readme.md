@@ -30,3 +30,5 @@ Create a data graph containing a new instance of your classes described.
 ### If you still have time
 If there are any relationships missing that you want to add, feel free!
 Examples of relationships missing (that could be useful) is ISBN, editor, publisher etc.
+
+Or identify the common connection between all the instances in the data graph! :sparkles: 
