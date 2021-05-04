@@ -18,7 +18,8 @@ import java.io.IOException;
 import java.io.Reader;
 
 public class RDF4JValidation {
-    public static void validation() throws IOException {
+
+    public static Model validation(String dataGraph, String shapes) throws IOException {
 
         // init shacl repository
         ShaclSail shaclSail = new ShaclSail(new MemoryStore());
@@ -33,7 +34,7 @@ public class RDF4JValidation {
         try (RepositoryConnection connection = repository.getConnection()) {
 
             FileOutputStream out = new FileOutputStream(Utils.VALIDATION_REPORT);
-            Reader shaclRules = new FileReader(Utils.SHAPES);
+            Reader shaclRules = new FileReader(shapes);
 
             // adding shapes
             connection.begin();
@@ -42,7 +43,7 @@ public class RDF4JValidation {
 
             // adding data
             connection.begin();
-            Reader data = new FileReader(Utils.DATA);
+            Reader data = new FileReader(dataGraph);
             connection.add(data, "", RDFFormat.TURTLE);
 
             try {
@@ -54,13 +55,15 @@ public class RDF4JValidation {
                 if (cause instanceof ShaclSailValidationException) {
                     validationReport = ((ShaclSailValidationException) cause).validationReportAsModel();
 
-
                     Rio.write(validationReport, out, RDFFormat.TURTLE);
+                    System.out.println("[INFO] Validation report conforming false produced");
+                    return validationReport;
                 }
-                throw e;
             }
+            System.out.println("[INFO] Validation report conforming true produced");
             validationReport.add(Utils.vf.createBNode(), SHACL.CONFORMS, Utils.vf.createLiteral(true));
             Rio.write(validationReport, out, RDFFormat.TURTLE);
         }
+        return validationReport;
     }
 }

@@ -1,3 +1,0 @@
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-
-_:node1eodbhuncx19 sh:conforms true .

@@ -1,0 +1,65 @@
+@prefix : <http://data.capgemini.com/pub/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:1
+    a :Publication ;
+    :publicationOf :TheHobbit ;
+    :title "Der Kleine Hobbit"@de ;
+    :binding :Paperback ;
+    :published "2012"^^xsd:year ;
+    :publisher :Dtv ;
+    :translator :WalterScherf .
+
+:2
+    a :Publication ;
+    :publicationOf :TheHobbit ;
+    :title "Hobbiten"@no ;
+    :binding :Paperback ;
+    :published "2002"^^xsd:year ;
+    :publisher :Tiden ;
+    :translator :NilsIvarAgoy .
+
+:3 
+    a :Publication ;
+    :publicationOf :TheHobbit ;
+    :title "The Hobbit or There and Back Again"@en ;
+    :binding :Paperback ;
+    :published "2006"^^xsd:year ;
+    :publisher :HarperCollins .
+
+:TheHobbit
+    a :Work ;
+    :mainTitle "The Hobbit, or There and Back Again"@en ;
+    :author :JRRTolkien .
+
+:JRRTolkien 
+    a :Person ;
+    :name "John Ronald Reuel Tolkien" ;
+    :born "1892-01-03"^^xsd:date ;
+    :died "1973-09-02"^^xsd:date .
+
+:WalterScherf
+    a :Person ;
+    :name "Walter Scherf" ;
+    :born "1920"^^xsd:year ;
+    :died "2010-10-25"^^xsd:date .
+
+:NilsIvarAgoy 
+    a :Person ;
+    :name "Nils Ivar Agøy" ;
+    :born "1959-11-19"^^xsd:date .
+
+:Dtv
+    a :Publisher ;
+    :companyName "Deutscher Taschenbuch Verlag"@de .
+
+:Tiden
+    a :Publisher ;
+    :companyName "Tiden Norsk Forlag"@no .
+
+:HarperCollins
+    a :Publisher ;
+    :companyName "Harper Collins"@en .
+

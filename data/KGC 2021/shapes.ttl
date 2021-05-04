@@ -1,0 +1,75 @@
+@prefix pub: <http://data.capgemini.com/pub/> .
+@prefix : <http://data.capgemini.com/shapes/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+### PUBLICATION
+
+:PublicationShape
+    a sh:NodeShape ;
+    sh:targetClass pub:Publication ;
+    sh:property :TitleShape, :PublishedShape, :PublisherShape, :TranslatorShape, :PublicationOfShape .
+
+:TitleShape
+    a sh:PropertyShape ;
+    sh:path pub:title ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ; sh:maxCount 1 .
+
+:PublicationOfShape
+    a sh:PropertyShape ;
+    sh:path pub:publicationOf ;
+    sh:class pub:Work .
+
+:PublishedShape
+    a sh:PropertyShape ;
+    sh:path pub:published ;
+    sh:or (
+        [ sh:datatype xsd:year ; ]
+        [ sh:datatype xsd:date ; ]
+    ) ;
+    sh:maxCount 1 .
+
+:PublisherShape
+    a sh:PropertyShape ;
+    sh:path pub:publisher ;
+    sh:class pub:Organisation .
+
+:TranslatorShape
+    a sh:PropertyShape ;
+    sh:path :translator ;
+    sh:class :Person .
+
+### PERSON
+
+:PersonShape
+    a sh:NodeShape ;
+    sh:name "Person shape"@en ;
+    sh:targetClass pub:Person ;
+    sh:property :NameShape, :BornShape, :DiedShape .
+
+:NameShape 
+    a sh:PropertyShape ;
+    sh:path :name ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ; sh:maxCount 1 .
+
+:BornShape
+    a sh:PropertyShape ;
+    sh:path pub:born ;
+    sh:or (
+        [ sh:datatype xsd:year ; ]
+        [ sh:datatype xsd:date ; ]
+    ) ;
+    sh:lessThanOrEquals pub:died ;
+    sh:minCount 1 ; sh:maxCount 1 .
+
+:DiedShape
+    a sh:PropertyShape ;
+    sh:path pub:died ;
+    sh:or (
+        [ sh:datatype xsd:year ; ]
+        [ sh:datatype xsd:date ; ]
+    ) ;
+    sh:maxCount 1 .

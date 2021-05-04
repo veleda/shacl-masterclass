@@ -9,11 +9,13 @@
 ## 2) Rewrite the shapes to try to fit all new data as well.
 ## TIP: Look into sh:node and sh:or.
 
-:Album rdfs:subClassOf :Work .
+:ProseEdda
+    a :PoemCollection ;
+    :title "Prose Edda"@en, "Den yngre Edda"@no ;
+    :compiledBy :SnorriSturluson .
 
-:NightfallInMiddleEarth
-    a :Album ;
-    :title "Nightfall in Middle-Earth"@en ;
-    :release "1998-04-28"^^xsd:date ;
-    :runningTime "65"^^unit:MIN ;
-    :albumBy :BlindGuardian .
+:SnorriSturluson
+    a :Poet ;
+    :name "Snorri Sturluson" ;
+    :born "1179"^^xsd:year ;
+    :died "1241-09-23"^^xsd:date .
