@@ -1,7 +1,10 @@
 # shacl-masterclass
-Demo the SHACL masterclass at Knowledge Connexions 2020 and the SHACL tutorial at Knowledge Graph Conference 2021.
+Demo for the SHACL masterclass at Knowledge Connexions 2020 and the SHACL tutorial at Knowledge Graph Conference 2021.
 
 [Slack channel for discussing the masterclass](https://knowledgeconnexions.slack.com/archives/C01F4L9J9UJ)
+
+### Demo implementation
+Demo implemented in Java with [RDF4J](https://rdf4j.org/documentation/programming/shacl/). 
 
 ### References & resources
 * W3C Recommendation [Shape Constraint Language](https://www.w3.org/TR/shacl/)
