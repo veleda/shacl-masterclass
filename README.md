@@ -1,5 +1,5 @@
 # shacl-masterclass
-Demo for the SHACL masterclass at Knowledge Connexions 2020 and the SHACL tutorial at Knowledge Graph Conference 2021.
+Demo for the SHACL masterclass at Knowledge Connexions 2020 and the SHACL tutorial at Knowledge Graph Conference 2021 & 2022.
 
 [Slack channel for discussing the masterclass](https://knowledgeconnexions.slack.com/archives/C01F4L9J9UJ)
 
