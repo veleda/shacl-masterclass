@@ -1,20 +1,3 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 
-_:node1f4rq4brex22 a sh:ValidationReport;
-  sh:conforms false;
-  <http://rdf4j.org/schema/rdf4j#truncated> false;
-  sh:result _:node1f4rq4brex23, _:node1f4rq4brex24 .
-
-_:node1f4rq4brex23 a sh:ValidationResult;
-  sh:focusNode <http://data.capgemini.com/pub/1>;
-  sh:sourceConstraintComponent sh:ClassConstraintComponent;
-  sh:sourceShape <http://data.capgemini.com/shapes/BindingShape>;
-  sh:resultPath <http://data.capgemini.com/pub/binding>;
-  sh:value <http://data.capgemini.com/pub/Paperback> .
-
-_:node1f4rq4brex24 a sh:ValidationResult;
-  sh:focusNode <http://data.capgemini.com/pub/2>;
-  sh:sourceConstraintComponent sh:ClassConstraintComponent;
-  sh:sourceShape <http://data.capgemini.com/shapes/BindingShape>;
-  sh:resultPath <http://data.capgemini.com/pub/binding>;
-  sh:value <http://data.capgemini.com/pub/Paperback> .
+_:node1g22h43six107 sh:conforms true .

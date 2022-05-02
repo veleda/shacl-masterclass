@@ -73,7 +73,7 @@
     sh:targetClass :Poet ;
     sh:node :PersonShape .
 
-:ComposerShpae
+:ComposerShape
     a sh:NodeShape ;
     sh:targetClass :Composer ;
     sh:node :PersonShape .
