@@ -1,0 +1,202 @@
+@prefix : <http://data.capgemini.com/pub/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:1
+    a :Publication ;
+    :publicationOf :TheHobbit ;
+    :title "Der Kleine Hobbit"@de ;
+    :binding :Paperback ;
+    :published "2012"^^xsd:year ;
+    :publisher :Dtv ;
+    :translator :WalterScherf .
+
+:2
+    a :Publication ;
+    :publicationOf :TheHobbit ;
+    :title "Hobbiten"@no ;
+    :binding :Paperback ;
+    :published "2002"^^xsd:year ;
+    :publisher :Tiden ;
+    :translator :NilsIvarAgoy .
+
+:3 
+    a :Publication ;
+    :publicationOf :TheHobbit ;
+    :title "The Hobbit or There and Back Again"@en ;
+    :binding :Paperback ;
+    :published "2006"^^xsd:year ;
+    :publisher :HarperCollins .
+
+:TheHobbit
+    a :Book ;
+    :mainTitle "The Hobbit, or There and Back Again"@en ;
+    :author :JRRTolkien .
+
+:JRRTolkien 
+    a :Person ;
+    :name "John Ronald Reuel Tolkien" ;
+    :born "1892-01-03"^^xsd:date ;
+    :died "1973-09-02"^^xsd:date .
+
+:WalterScherf
+    a :Person ;
+    :name "Walter Scherf" ;
+    :born "1920"^^xsd:year ;
+    :died "2010-10-25"^^xsd:date .
+
+:NilsIvarAgoy 
+    a :Person ;
+    :name "Nils Ivar Agøy" ;
+    :born "1959-11-19"^^xsd:date .
+
+:Dtv
+    a :Publisher ;
+    :companyName "Deutscher Taschenbuch Verlag"@de .
+
+:Tiden
+    a :Publisher ;
+    :companyName "Tiden Norsk Forlag"@no .
+
+:HarperCollins
+    a :Publisher ;
+    :companyName "Harper Collins"@en .
+
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://data.capgemini.com/pub/author
+:author rdf:type owl:ObjectProperty ;
+        rdfs:domain :Work ;
+        rdfs:range :Person .
+
+
+###  http://data.capgemini.com/pub/binding
+:binding rdf:type owl:ObjectProperty ;
+         rdfs:domain :Publication ;
+         rdfs:range :Binding .
+
+
+###  http://data.capgemini.com/pub/publicationOf
+:publicationOf rdf:type owl:ObjectProperty ;
+               rdfs:domain :Publication ;
+               rdfs:range :Work .
+
+
+###  http://data.capgemini.com/pub/publisher
+:publisher rdf:type owl:ObjectProperty ;
+           rdfs:domain :Publication ;
+           rdfs:range :Publisher .
+
+
+###  http://data.capgemini.com/pub/translator
+:translator rdf:type owl:ObjectProperty ;
+            rdfs:domain :Publication ;
+            rdfs:range :Person .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://data.capgemini.com/pub/born
+:born rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Person ;
+      rdfs:range xsd:date .
+
+
+###  http://data.capgemini.com/pub/companyName
+:companyName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Organisation ;
+             rdfs:range xsd:string .
+
+
+###  http://data.capgemini.com/pub/died
+:died rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Person ;
+      rdfs:range xsd:date .
+
+
+###  http://data.capgemini.com/pub/mainTitle
+:mainTitle rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Work ;
+           rdfs:range xsd:string .
+
+
+###  http://data.capgemini.com/pub/name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Person ;
+      rdfs:range xsd:string .
+
+
+###  http://data.capgemini.com/pub/published
+:published rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Publication ;
+           rdfs:range xsd:date .
+
+
+###  http://data.capgemini.com/pub/title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Publication ;
+       rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://data.capgemini.com/pub/Binding
+:Binding rdf:type owl:Class .
+
+
+###  http://data.capgemini.com/pub/Book
+:Book rdf:type owl:Class ;
+      rdfs:subClassOf :Work .
+
+
+###  http://data.capgemini.com/pub/Hardcover
+:Hardcover rdf:type owl:Class ;
+           rdfs:subClassOf :Binding .
+
+
+###  http://data.capgemini.com/pub/Movie
+:Movie rdf:type owl:Class ;
+       rdfs:subClassOf :Work .
+
+
+###  http://data.capgemini.com/pub/Organisation
+:Organisation rdf:type owl:Class .
+
+
+###  http://data.capgemini.com/pub/Paperback
+:Paperback rdf:type owl:Class ;
+           rdfs:subClassOf :Binding .
+
+
+###  http://data.capgemini.com/pub/Person
+:Person rdf:type owl:Class .
+
+
+###  http://data.capgemini.com/pub/Publication
+:Publication rdf:type owl:Class .
+
+
+###  http://data.capgemini.com/pub/Publisher
+:Publisher rdf:type owl:Class ;
+           rdfs:subClassOf :Organisation .
+
+
+###  http://data.capgemini.com/pub/Work
+:Work rdf:type owl:Class .
