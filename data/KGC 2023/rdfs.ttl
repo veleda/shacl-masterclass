@@ -1,0 +1,62 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix : <https://data.capgemini.com/books/> .
+
+:Work a rdfs:Class ;
+    rdfs:label "Work"@en, "Verk"@no .
+
+:Book rdfs:subClassOf :Work ;
+    rdfs:label "Book"@en .
+
+:Movie rdfs:subClassOf :Work ;
+    rdfs:label "Movie"@en .
+
+:Publication rdfs:subClassOf :Book ;
+    :rdfs:label "Publication"@en .
+
+:Publisher rdfs:subClassOf :Organisation .
+
+:Author rdfs:subClassOf :Person .
+:Translator rdfs:subClassOf :Person .
+
+## Properties
+
+:mainTitle a rdf:Property ;
+    rdfs:domain :Work ;
+    rdfs:range rdf:langString .
+
+:publicationOf a rdf:Property ;
+    rdfs:domain :Publication ;
+    rdfs:range :Work .
+
+:publisher a rdf:Property ;
+    rdfs:domain :Publication ;
+    rdfs:range :Publisher .
+
+:published a rdf:Property ;
+    rdfs:domain :Publication ;
+    rdfs:range xsd:date, xsd:gYear .
+
+:author a rdf:Property ;
+    rdfs:domain :Book ;
+    rdfs:range :Author .
+
+:name a rdf:Property ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:birthDate a rdf:Property ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:date .
+
+:deathDate a rdf:Property ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:date .
+
+:translator a rdf:Property ;
+    rdfs:domain :Publication ;
+    rdfs:range :Translator .

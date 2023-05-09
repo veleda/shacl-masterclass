@@ -1,0 +1,104 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix : <https://data.capgemini.com/books/> .
+
+:TheHobbit a :Work ;
+    :mainTitle "The Hobbit, or There and Back Again"@en ;
+    :author :JRRTolkien ;
+    :published "1937-09-21"^^xsd:date ;
+    :followedBy :TheLordOfTheRings .
+
+:1 a :Publication ;
+    :mainTitle "Hobbiten eller Ditut og attende"@no-nn ;
+    :publisher :TidenNorskForlag ;
+    :translator :EilevGrovenMyhren ;
+    :publicationOf :TheHobbit ;
+    :published "2021"^^xsd:gYear .
+
+:2 a :Publication ;
+    :mainTitle "Hobbiten eller Fram og tilbake igjen"@no-nb ;
+    :publisher :TidenNorskForlag ;
+    :translator :NilsIvarAgøy ;
+    :publicationOf :TheHobbit ;
+    :published "2021"^^xsd:gYear .
+
+
+:3 a :Publication ;
+    :mainTitle "Hobitti eli Sinne ja takaisin"@fi ;
+    :publisher :WSOY ;
+    :translator :KerstiJuva ;
+    :published "2017"^^xsd:gYear .
+
+:4 a :Publication ;
+    :mainTitle "The Hobbit or There and Back Again"@en ;
+    :publisher :HarperCollinsPublishers ;
+    :publicationOf :TheHobbit ;
+    :published "1998"^^xsd:gYear .
+
+:5 a :Publication ;
+    :mainTitle "The Hobbit or There and Back Again"@en ;
+    :publisher :HarperCollinsPublishers ;
+    :publicationOf :TheHobbit ;
+    :published "2006"^^xsd:gYear .
+
+:6 a :Publication ;
+    :mainTitle "Der kleine Hobbit"@de ;
+    :publisher :DTV ;
+    :translator :WalterScherf ;
+    :publicationOf :TheHobbit ;
+    :published "2013"^^xsd:gYear .
+
+
+## People
+
+:JRRTolkien a :Author ;
+    :name "John Ronald Reuel Tolkien" ;
+    :birthDate "" ;
+    :deathDate "" ;
+    :nationality :British .
+
+:NilsIvarAgøy a :Translator ;
+    :name "Nils Ivar Agøy" ;
+    :birthDate "" ;
+    :nationality :Norwegian .
+
+:WalterScherf a :Translator ;
+    :name "Walter Scherf" ;
+    :birthDate "" ;
+    :nationality :German .
+
+:KerstiJuva a :Translator ;
+    :name "Kersti Juva" ;
+    :birthDate "" ;
+    :nationality :Finnish .
+
+:EilevGrovenMyhren a :Translator ;
+    :name "Eilev Groven Myhren" ;
+    :birthDate "" ;
+    :nationality :Norwegian .
+
+
+## Companies
+
+:TidenNorskForlag a :Publisher ;
+    :companyName "Tiden Norsk Forlag"@no .
+
+:WSOY a :Publisher ;
+    :companyName "Werner Söderström Osakeyhtiö"@fi .
+
+:HarperCollinsPublishers a :Publisher ;
+    :companyName "Harper Collings Publishers"@en ;
+    :adress [
+        :street "Fulham Palace Road" ;
+        :streetNumber "77-85" ;
+        :county "Hammersmith" ;
+        :city "London" ;
+        :zip "W6 8JB" ;
+        :country "Great Britain" ;
+    ] .
+
+:DTV a :Publisher ;
+    :companyName "Deutscher Taschenbuch Verlag"@de .
