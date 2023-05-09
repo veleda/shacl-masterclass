@@ -7,6 +7,7 @@ Demo for the SHACL masterclass at Knowledge Connexions 2020 and the SHACL tutori
 Demo implemented in Java with [RDF4J](https://rdf4j.org/documentation/programming/shacl/). 
 
 ### References & resources
+* [SHACL Wiki](https://kvistgaard.github.io/shacl/)
 * W3C Recommendation [Shape Constraint Language](https://www.w3.org/TR/shacl/)
 * Holger Knublauch [SHACL and OWL Compared](https://spinrdf.org/shacl-and-owl.html)
 * W3C Working Group Note [SHACL Advanced Features](https://w3c.github.io/shacl/shacl-af/)
