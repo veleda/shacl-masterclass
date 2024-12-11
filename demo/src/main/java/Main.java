@@ -8,8 +8,9 @@ public class Main {
 
 
         Model model = RDF4JValidation.validation(
-                "src/main/resources/2022 tutorial/data.ttl",
-                "src/main/resources/2022 tutorial/shapes.ttl"
+                "src/main/resources/2024/data.ttl",
+                "src/main/resources/2024/shapes.ttl",
+                "src/main/resources/2024/report.ttl"
         );
 
         System.out.println(Utils.modelToString(model, RDFFormat.TURTLE));

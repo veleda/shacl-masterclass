@@ -9,8 +9,6 @@ import java.io.StringWriter;
 
 public class Utils {
 
-    public static final String VALIDATION_REPORT = "src\\main\\resources\\report.ttl";
-
     public static final ValueFactory vf = SimpleValueFactory.getInstance();
 
     public static String modelToString(Model model, RDFFormat syntax) {

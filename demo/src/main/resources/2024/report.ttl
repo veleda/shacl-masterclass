@@ -1,0 +1,19 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+_:node1ieqi8tu4x24 a sh:ValidationReport;
+  sh:conforms false;
+  <http://rdf4j.org/schema/rdf4j#truncated> false;
+  sh:result _:node1ieqi8tu4x25, _:node1ieqi8tu4x26 .
+
+_:node1ieqi8tu4x25 a sh:ValidationResult;
+  sh:focusNode <http://data.veronahe.no/collection/TheHobbit>;
+  sh:sourceConstraintComponent sh:DatatypeConstraintComponent;
+  sh:sourceShape <http://rules.veronahe.no/collection/Book-title>;
+  sh:resultPath <http://data.veronahe.no/collection/title>;
+  sh:value "The Hobbit, or There and Back Again"@en .
+
+_:node1ieqi8tu4x26 a sh:ValidationResult;
+  sh:focusNode <http://data.veronahe.no/collection/JRRTolkien>;
+  sh:sourceConstraintComponent sh:MinCountConstraintComponent;
+  sh:sourceShape <http://rules.veronahe.no/collection/Person-name>;
+  sh:resultPath <http://data.veronahe.no/collection/name> .

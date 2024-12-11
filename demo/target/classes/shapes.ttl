@@ -1,19 +1,53 @@
-@prefix : <http://example.com/books/> .
+@prefix dash: <http://datashapes.org/dash#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix rule: <http://rules.veronahe.no/collection/> .
+@prefix ex: <http://data.veronahe.no/collection/> .
 
-:BookShape
-    a sh:NodeShape ;
-    sh:targetClass :Book ;
-    sh:property :TitleShape .
 
-:TitleShape
-    a sh:PropertyShape ;
-    sh:path :title ;
-    sh:datatype rdf:langString ;
-    sh:minCount 1 ;
-    sh:maxCount 1 .
+rule:Book
+ a sh:NodeShape ;
+ sh:targetClass ex:Book ;
+ sh:node rule:Work ;
+ sh:property rule:Book-author ,
+  rule:Book-published .
+
+rule:Work
+ a sh:NodeShape ;
+ sh:targetClass ex:Work ;
+ sh:property rule:Work-mainTitle .
+
+rule:Author
+ a sh:NodeShape ;
+ sh:targetClass ex:Author ;
+ sh:property rule:Author-fullName .
+
+rule:Book-author
+ a sh:PropertyShape ;
+ sh:path ex:author ;
+ sh:minCount 1 ;
+ sh:class ex:Author .
+
+rule:Book-published
+ a sh:PropertyShape ;
+ sh:path ex:published ;
+ sh:or (
+  [ sh:datatype xsd:gYear ]
+  [ sh:datatype xsd:date ]
+ ) .
+
+rule:Work-mainTitle
+ a sh:PropertyShape ;
+ sh:path ex:mainTitle ;
+ sh:minCount 1 ;
+ sh:maxCount 1 ;
+ sh:datatype rdf:langString .
+
+rule:Author-fullName
+ a sh:PropertyShape ;
+ sh:path ex:fullName ;
+ sh:minCount 1 ;
+ sh:datatype xsd:string .

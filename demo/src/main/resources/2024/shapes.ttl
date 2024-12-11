@@ -1,0 +1,34 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rule: <http://rules.veronahe.no/collection/> .
+@prefix ex: <http://data.veronahe.no/collection/> .
+
+
+rule:Book
+    a sh:NodeShape ;
+    sh:targetClass ex:Book ;
+    sh:property rule:Book-title, rule:Book-author .
+
+rule:Book-title
+    a sh:PropertyShape ;
+    sh:path ex:title ;
+    sh:datatype xsd:string .
+
+rule:Book-author
+    a sh:PropertyShape ;
+    sh:path ex:author ;
+    sh:class ex:Author ;
+    sh:minCount 1 .
+
+rule:Person
+    a sh:NodeShape ;
+    sh:targetClass ex:Person ;
+    sh:property rule:Person-name .
+
+rule:Person-name
+    a sh:PropertyShape ;
+    sh:path ex:name ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 .

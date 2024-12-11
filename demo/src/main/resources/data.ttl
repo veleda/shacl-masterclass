@@ -1,37 +1,19 @@
-@prefix : <http://example.com/books/> .
+@prefix ex: <http://example.org/ns#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix unit: <http://qudt.org/vocab/unit#> .
+@prefix ex: <http://data.veronahe.no/collection/> .
 
-:Work a rdfs:Class .
-:Book rdfs:subClassOf :Work .
 
-:Author rdfs:subClassOf foaf:Person .
-:Director rdfs:subClassOf foaf:Person .
 
-:TheHobbit
-    a :Book ;
-    :title "The Hobbit, or There and Back Again"@en ;
-    :release "1937-09-21"^^xsd:date ;
-    :pages "310"^^xsd:integer ;
-    :author :JRRTolkien .
 
-:AnUnexpectedJourney
-    a :Movie ;
-    :title "The Hobbit: An Unexpected Journey"@en ;
-    :release "2012-11-28"^^xsd:date ;
-    :runningTime "169"^^unit:MIN ;
-    :director :PeterJackson .
+ex:Book rdfs:subClassOf ex:Work .
+ex:Author rdfs:subClassOf ex:Person .
 
-:JRRTolkien
-    a :Author ;
-    :name "John Ronald Reuel Tolkien" ;
-    :born "1892-01-03"^^xsd:date ;
-    :died "1973-09-02"^^xsd:date .
+ex:TheHobbit a ex:Book ;
+ ex:mainTitle "The Hobbit, or There and Back Again" ;
+ ex:author ex:JRRTolkien .
 
-:PeterJackson
-    a :Director ;
-    :name "Peter Jackson" ;
-    :born "1961-10-31"^^xsd:date .
+ex:JRRTolkien a ex:Person ;
+ ex:fullName "John Ronald Reuel Tolkien" .

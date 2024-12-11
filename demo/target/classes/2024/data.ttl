@@ -1,0 +1,13 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://data.veronahe.no/collection/> .
+
+ex:TheHobbit a ex:Book ;
+    ex:title "The Hobbit, or There and Back Again"@en ;
+    ex:author ex:JRRTolkien .
+
+ex:JRRTolkien a ex:Author ;
+    ex:birthDate "1892-01-03"^^xsd:date .
+
+ex:Author rdfs:subClassOf ex:Person .

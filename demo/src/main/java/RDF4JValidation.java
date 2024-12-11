@@ -19,7 +19,7 @@ import java.io.Reader;
 
 public class RDF4JValidation {
 
-    public static Model validation(String dataGraph, String shapes) throws IOException {
+    public static Model validation(String dataGraph, String shapes, String output) throws IOException {
 
         // init shacl repository
         ShaclSail shaclSail = new ShaclSail(new MemoryStore());
@@ -33,7 +33,7 @@ public class RDF4JValidation {
 
         try (RepositoryConnection connection = repository.getConnection()) {
 
-            FileOutputStream out = new FileOutputStream(Utils.VALIDATION_REPORT);
+            FileOutputStream out = new FileOutputStream(output);
             Reader shaclRules = new FileReader(shapes);
 
             // adding shapes
