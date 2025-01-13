@@ -17,6 +17,7 @@ Demo implemented in Java with [RDF4J](https://rdf4j.org/documentation/programmin
 * Veronika Heimsbakk and Ivo Velitchkov [SHACL Wiki](https://kvistgaard.github.io/shacl/)
 * W3C Recommendation [Shape Constraint Language](https://www.w3.org/TR/shacl/)
 * Holger Knublauch [SHACL and OWL Compared](https://spinrdf.org/shacl-and-owl.html)
+* Sparna [SHACL Play!](https://shacl-play.sparna.fr/play/)
 * W3C Working Group Note [SHACL Advanced Features](https://w3c.github.io/shacl/shacl-af/)
 * Top Quadrant [DASH Data Shapes](http://datashapes.org/)
 * Jose Emilio labra Gayo, Eric Prud’hommeaux, Iovka Boneva, Dimitris Kontokostas [Validating RDF Data](https://book.validatingrdf.com/)
