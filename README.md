@@ -10,6 +10,9 @@ Demo, slides and data for SHACL Masterclass as seen on
 ### Demo implementation
 Demo implemented in Java with [RDF4J](https://rdf4j.org/documentation/programming/shacl/). 
 
+### Latest news regarding *SHACL for the Practitioner*
+* Veronika Heimsbakk [Dots and arrows](https://veronahe.wordpress.com/shacl-for-the-practitioner/)
+
 ### References & resources
 * Veronika Heimsbakk and Ivo Velitchkov [SHACL Wiki](https://kvistgaard.github.io/shacl/)
 * W3C Recommendation [Shape Constraint Language](https://www.w3.org/TR/shacl/)
