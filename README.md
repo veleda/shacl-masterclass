@@ -11,7 +11,7 @@ Demo, slides and data for SHACL Masterclass as seen on
 Demo implemented in Java with [RDF4J](https://rdf4j.org/documentation/programming/shacl/). 
 
 ### Latest news regarding *SHACL for the Practitioner*
-* Veronika Heimsbakk [Dots and arrows](https://veronahe.wordpress.com/shacl-for-the-practitioner/)
+* Veronika Heimsbakk [SHACL for the Practitioner](https://shacl.veronahe.no)
 
 ### References & resources
 * Veronika Heimsbakk and Ivo Velitchkov [SHACL Wiki](https://kvistgaard.github.io/shacl/)
